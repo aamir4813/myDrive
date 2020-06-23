@@ -17,6 +17,12 @@ def profile():
 def display_all():
     user_id = current_user.id
     data = Files.query.filter_by(user_id=user_id)
-    print(data.fileName)
+    # print(data.fileName)
     return render_template("profile.html" , title="Welcome" , name=current_user.name , data=data , test = 1)
 
+@app.route('/dashboard/<path:filename>', methods=['POST' , 'GET'])
+@login_required
+def download(filename):
+    # send_from_directory(directory=app.config['UPLOAD_FOLDER'], filename=filename , as_attachment=True)
+    redirect(url_for('display_all'))
+    return send_from_directory(directory=app.config['UPLOAD_FOLDER'], filename=filename , as_attachment=True)

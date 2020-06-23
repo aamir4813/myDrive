@@ -8,10 +8,10 @@
     {% for file in data %}
     <!-- <br> -->
     <!-- <input type="button" onclick="location.href=; " value="Download" /> -->
-    <form  method="POST">
-        {{file.fileName}}  - {{file.filePath}} - {{file.fileCreated}} 
-            <button type="submit" class="btn btn-dark">Download</button>
-        </form>
+    <form method="POST" action="/dashboard/{{file.fileName}}" target="_blank">
+        {{file.fileName}} - {{file.filePath}} - {{file.fileCreated}}
+        <button type="submit" class="btn btn-dark">Download</button>
+    </form>
     <!-- </br> -->
     {% endfor %}
 </h5>
