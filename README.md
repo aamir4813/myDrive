@@ -1,10 +1,4 @@
 # myDrive
 current ROutes..
 
-# /
-# profile
-# dashboard
-# login
-# logout
-# signup
-# upload
+ / ,  /profile , /dashboard , /login , /logout , /signup , /upload
