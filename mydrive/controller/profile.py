@@ -9,13 +9,11 @@ from flask_login import login_required, current_user
 
 @app.route("/view/<filename>", methods=["POST"])
 def view_image(filename):
-    print(f'Downloading file {filename}')
     return send_from_directory(directory=app.config['UPLOAD_FOLDER'], filename=filename)
 
 
 @app.route("/download/<filename>", methods=["POST"])
 def download_file(filename):
-    print(f'Downloading file {filename}')
     return send_from_directory(directory=app.config['UPLOAD_FOLDER'], filename=filename,  as_attachment=True)
 
 
