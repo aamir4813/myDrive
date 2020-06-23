@@ -7,10 +7,15 @@ from mydrive.webApp import db
 from flask_login import login_required, current_user
 
 
-@app.route("/download/<filename>", methods=["POST"])
-def func(filename):
+@app.route("/view/<filename>", methods=["POST"])
+def view_image(filename):
     print(f'Downloading file {filename}')
-    # return redirect('/dashboard')
+    return send_from_directory(directory=app.config['UPLOAD_FOLDER'], filename=filename)
+
+
+@app.route("/download/<filename>", methods=["POST"])
+def download_file(filename):
+    print(f'Downloading file {filename}')
     return send_from_directory(directory=app.config['UPLOAD_FOLDER'], filename=filename,  as_attachment=True)
 
 
@@ -26,4 +31,4 @@ def display_all():
     user_id = current_user.id
     data = Files.query.filter_by(user_id=user_id)
     # print(data.fileName)
-    return render_template("profile.html", title="Welcome", name=current_user.name, data=data, callback=func, test=1)
+    return render_template("profile.html", title="Welcome", name=current_user.name, data=data,  test=1)
