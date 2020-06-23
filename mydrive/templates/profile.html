@@ -1,0 +1,19 @@
+{% extends "home.html" %}
+{% block content %}
+{% include "uploader.html" %}
+<h1>----------------------------------------------------------------------------------</h1>
+<h1>List of All Files </h1>
+<h5>
+    <!-- {{ test }} -->
+    {% for file in data %}
+    <!-- <br> -->
+    <!-- <input type="button" onclick="location.href=; " value="Download" /> -->
+    <form  method="POST">
+        {{file.fileName}}  - {{file.filePath}} - {{file.fileCreated}} 
+            <button type="submit" class="btn btn-dark">Download</button>
+        </form>
+    <!-- </br> -->
+    {% endfor %}
+</h5>
+
+{% endblock %}
