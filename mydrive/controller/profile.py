@@ -29,4 +29,4 @@ def display_all():
     user_id = current_user.id
     data = Files.query.filter_by(user_id=user_id)
     # print(data.fileName)
-    return render_template("profile.html", title="Welcome", name=current_user.name, data=data,  test=1)
+    return render_template("profile.html", title="Welcome", name=current_user.name, data=data, test=1)
