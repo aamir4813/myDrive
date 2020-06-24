@@ -8,10 +8,21 @@
     {% for file in data %}
     <!-- <br> -->
     <!-- <input type="button" onclick="location.href=; " value="Download" /> -->
-    <form method="POST" action="/dashboard/{{file.fileName}}" target="_blank">
-        {{file.fileName}} - {{file.filePath}} - {{file.fileCreated}}
-        <button type="submit" class="btn btn-dark">Download</button>
-    </form>
+    <div class="card card-body mb-3 d-flex flex-row justify-content-between">
+        <div class="mr-auto p-2">
+            File Name:
+            <span class="font-weight-light">
+                {{file.fileName}}
+                <span class="font-italic font-weight-light h6">(Created at: {{file.fileCreated}})</span>
+            </span>
+        </div>
+        <form method="POST" action="/view/{{file.fileName}}" target="_blank" class="p-2">
+            <button type="submit" class="btn btn-success">View Image</button>
+        </form>
+        <form method="POST" action="/download/{{file.fileName}}" target="_blank" class="p-2">
+            <button type="submit" class="btn btn-dark">Download</button>
+        </form>
+    </div>
     <!-- </br> -->
     {% endfor %}
 </h5>
