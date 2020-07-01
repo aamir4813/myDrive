@@ -25,5 +25,5 @@ def about():
 def contact():
     if current_user.is_authenticated:
         return render_template("contact.html" , login=True)
-    w
+        
     return render_template("contact.html" , login=False)
