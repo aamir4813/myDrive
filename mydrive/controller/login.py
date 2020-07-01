@@ -24,7 +24,7 @@ def login_post():
     # print(user.password_hash)
     if not user or not check_password_hash(user.password_hash , password):
         flash("Please check you Login details")
-        return render_template("login" , signup=True)
+        return render_template("login.html" , signup=True)
     # print(email)
     # print("Success !")
     login_user(user , remember)
