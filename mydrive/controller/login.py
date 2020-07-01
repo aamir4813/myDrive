@@ -29,7 +29,7 @@ def login_post():
     # print("Success !")
     login_user(user , remember)
     # flash("login")
-    return render_template("dashboard.html" , login=True)
+    return redirect(url_for('display_all'))
 
     # return render_template('login.html' , title="login - myDrive")
 

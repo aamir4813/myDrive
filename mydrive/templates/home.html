@@ -4,12 +4,18 @@
 
 {% block signup %}
 {% if login %}
+<form class="form-inline my-2 my-lg-0" action="/logout">
     <button class="btn btn-outline-success my-2 my-sm-0" action="/logout" type="submit">Logout</button>
-    {% else %}
+</form>
+
+{% else %}
+<form class="form-inline my-2 my-lg-0" action="/login">
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
-   
-    <button class="btn btn-outline-success my-2 my-sm-0" action="/signup" type="submit">Signup</button>
-    {% endif %}
+</form>
+<form class="form-inline my-2 my-lg-0" action="/signup">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Signup</button>
+</form>
+{% endif %}
 {% endblock %}
 
 
@@ -26,7 +32,7 @@
 
 {% block content %}
 <h3>Home Page</h3>
-<p>This web-app is based on to store file online , download later  </p>
+<p>This web-app is based on to store file online , download later </p>
 <p>Simmilar to Dropbox , Google Drive </p>
 <br>
 <p>Tech Stack : Python - (Flask) , Jinja2 </p>

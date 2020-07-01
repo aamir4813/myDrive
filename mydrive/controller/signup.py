@@ -6,7 +6,7 @@ from mydrive.webApp import db
 from flask_login import  current_user 
 
 
-@app.route("/signup" )
+@app.route("/signup" , methods=["GET"] )
 def signup():
     if current_user.is_authenticated:
         return redirect(url_for('display_all'))
