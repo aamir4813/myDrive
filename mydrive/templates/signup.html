@@ -1,4 +1,11 @@
-{% extends "home.html" %}
+{% extends "base.html" %}
+
+{% block signup %}
+  <button class="btn btn-outline-success my-2 my-sm-0" action="/login" type="submit">Login</button>
+  <button class="btn btn-outline-success my-2 my-sm-0" action="/signup" type="submit">Signup</button>
+{% endblock %}
+
+
 {% block content %}
 <form method="POST" action="/signup">
   <div class="form-group">

@@ -26,9 +26,10 @@ migrate = Migrate(app, db)
 import mydrive.controller.profile
 import mydrive.controller.home 
 import mydrive.controller.login
-import mydrive.controller.register
+import mydrive.controller.signup
 import mydrive.controller.logout
 import mydrive.controller.upload
+# import mydrive.controller
 
 
 from mydrive.models.user_model import Users
@@ -38,6 +39,6 @@ from mydrive.models.files_model import Files
 def load_user(users_id):
     return Users.query.get(int(users_id))
 
-db.create_all()
+# db.create_all()
 
 # db.commit()

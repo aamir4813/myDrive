@@ -3,9 +3,14 @@ from flask import render_template , request , flash , redirect ,url_for
 from werkzeug.security import generate_password_hash, check_password_hash
 from mydrive.models.user_model import Users
 from mydrive.webApp import db
+from flask_login import  current_user 
 
-@app.route("/signup" , methods=["GET"])
+
+@app.route("/signup" )
 def signup():
+    if current_user.is_authenticated:
+        return redirect(url_for('display_all'))
+
     return render_template("signup.html" , title="SignUp - myDrive")
 
 @app.route("/signup" , methods=["POST"])

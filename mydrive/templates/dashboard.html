@@ -1,4 +1,15 @@
-{% extends "home.html" %}
+{% extends "base.html" %}
+
+{%block signup %}
+    <button class="btn btn-outline-success my-2 my-sm-0" href="/logout" type="submit">Logout</button>
+{% endblock %}
+
+{% block dashboard %}
+<li class="nav-item active">
+    <a class="nav-link" href="/dashboard">Dashobard <span class="sr-only">(current)</span></a>
+</li>
+{% endblock %}
+
 {% block content %}
 {% include "uploader.html" %}
 <h1>----------------------------------------------------------------------------------</h1>

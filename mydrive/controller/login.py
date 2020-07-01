@@ -3,15 +3,16 @@ from flask import render_template , request , flash , redirect , url_for
 from werkzeug.security import generate_password_hash, check_password_hash
 from mydrive.models.user_model import Users
 from mydrive.webApp import db
-from flask_login import login_user , current_user 
+from flask_login import login_user , current_user  , logout_user
 
 @app.route("/login" , methods=["GET"])
 def login():
    
     if current_user.is_authenticated:
-        return redirect(url_for('profile'))
-
-    return render_template("login.html" , title="Login - myDrive")
+        return redirect(url_for('display_all'))
+    # print("yes")
+    logout_user()
+    return render_template("login.html" , title="Login - myDrive" , login = False)
 
 @app.route("/login" , methods=["POST"])
 def login_post():
@@ -23,11 +24,12 @@ def login_post():
     # print(user.password_hash)
     if not user or not check_password_hash(user.password_hash , password):
         flash("Please check you Login details")
-        return redirect(url_for('login'))
+        return render_template("login" , signup=True)
     # print(email)
     # print("Success !")
     login_user(user , remember)
-    return redirect(url_for("profile"))
+    # flash("login")
+    return render_template("dashboard.html" , login=True)
 
     # return render_template('login.html' , title="login - myDrive")
 

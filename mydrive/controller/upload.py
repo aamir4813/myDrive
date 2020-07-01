@@ -22,7 +22,7 @@ def upload():
         tempFile = request.files['file']
         fileName = tempFile.filename
 
-        if fileName is "":
+        if fileName == "":
             print("No filename")
             return  redirect(url_for('display_all'))
 
