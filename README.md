@@ -8,7 +8,9 @@
 
 ## About <a name = "about"></a>
 
-Idea behind this project was to make my dirty to implement few simmilar functionality used by Big Giants in FIle Storing Campaign like Google Drive , DropBox , OneDrive etc. 
+Idea behind this project was to make my dirty to implement few simmilar functionality used by Big Giants in FIle Storing Campaign like Google Drive , DropBox , OneDrive etc.
+
+So This is backend by Flask , MySQL (DB) , SQLALchemy For Object Relational Mapping , Jinja2 for Rendering HTML/CSS 
 
 ## Getting Started <a name = "getting_started"></a>
 
