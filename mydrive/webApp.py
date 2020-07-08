@@ -16,8 +16,13 @@ login_manager.login_view = 'login'
 login_manager.init_app(app)
 
 app.config.from_object(Config)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://drive:myDrive#123@localhost:3306/mydrive'
-# app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
+DB_USER = os.environ.get('DB_NAME')
+DB_PASSWORD = os.environ.get('DB_PASSWORD')
+DB_NAME = os.environ.get('DB_NAME')
+# print(DB_NAME)
+# app.config['SQLALCHEMY_DATABASE_URI'] =  os.environ.get('DATABASE_URL')
+app.config['SQLALCHEMY_DATABASE_URI'] =  "mysql+pymysql://drive:myDrive#123@localhost:3306/mydrive"
+# app.config['SQLALCHEMY_DATABASE_URI'] =  "mysql+pymysql://{DB_USER}:{DB_PASSWORD}@localhost:3306/{DB_NAME}"
 
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
