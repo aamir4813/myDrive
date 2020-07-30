@@ -1,4 +1,4 @@
-from mydrive.webApp import app
+from mydrive.webApp import app as application
 
 if __name__ == "__main__":
-    app.run()
+    application.run()

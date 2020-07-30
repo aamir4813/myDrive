@@ -3,3 +3,7 @@ venv/
 *.pyc
 Storage/
 .env
+.uwsgi_plugins_builder/
+env/
+nginx_server.conf
+run.sh

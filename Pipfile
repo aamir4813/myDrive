@@ -11,9 +11,9 @@ flask-sqlalchemy = "*"
 flask-migrate = "*"
 pymysql = "*"
 python-dotenv = "*"
-flask-mysqldb = "*"
-psycopg2 = "==2.8.4"
 flask-login = "*"
+gunicorn = "*"
+uwsgi = "*"
 
 [requires]
 python_version = "3.8"
